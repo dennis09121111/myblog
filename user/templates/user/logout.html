@@ -1,0 +1,7 @@
+{% extends 'post/base.html' %}
+{% block content %}
+    <h2 class="mt-5">You have logged out</h2>
+    <div class="border-top mt-5">
+        <small class="text-muted">Login back in<a class="ml-2" href="{% url 'user_login' %}">Login Here</a></small>
+    </div>
+{% endblock content %}

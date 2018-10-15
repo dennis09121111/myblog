@@ -1,0 +1,24 @@
+{% extends 'post/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4 card" style="width: 18rem;">
+            <img src="{{ user.profile.image.url }}" alt="{{ user.username }}" style="width:100%">
+            <h3>{{ user.username }}</h3>
+            <p class="title">{{ user.email }}</p>
+            <p>{{ user.profile.bio }}</p>
+            <p><button>Follow</button></p>
+        </div>
+        <div class="col-md-8">
+            <form class="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <legend class="border-bottom">Join Today</legend>
+                    {{ u_form|crispy }}
+                    {{ p_form|crispy }}
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

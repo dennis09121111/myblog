@@ -1,0 +1,14 @@
+{% extends 'post/base.html' %}
+{% block content %}
+    <div class="container container-20">
+        <form class="my-3" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <legend class="border-bottom mh-4">New Post</legend>
+                <h2>Please confirm to delete post {{ object.title }}</h2>
+            </div>
+            <button type="submit" class="btn btn-danger">Yes, Delete </button>
+            <a class="btn btn-secondary text-light" href="{% url 'post_detail' object.id %}">Cancel</a>
+        </form>
+    </div>
+{% endblock content %}

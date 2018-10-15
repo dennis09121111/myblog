@@ -1,0 +1,15 @@
+{% extends 'post/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container container-20">
+        <form class="my-3" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <legend class="border-bottom mh-4">Post</legend>
+                {{ form|crispy }}
+            </div>
+            <button type="submit" class="btn btn-primary">Post</button>
+            <a href="{{request.META.HTTP_REFERER}}" class="btn btn-secondary btn-secondary">Cancel</a>
+        </form>
+    </div>
+{% endblock content %}
