@@ -1,0 +1,14 @@
+<div class="card border-dark my-3 w-80">
+    <div class="card-header">
+        <img src="{{ person.profile.image.url }}" alt="" class="rounded float-left profile-image">
+        <a class="mute ml-2" href="#">{{ person.username }}</a>
+        <small class="text-muted">{{ time }}</small>
+    </div>
+    <div class="card-body text-dark">
+        <h5 class="card-title">
+            <a class="mute" href="{% url 'post_detail' post.id %}">{{ title }}</a>
+        </h5>
+        <p class="card-text">{{ content|truncatechars:max_length }}</p>
+        <!-- {{ post.content|truncatechars:220 }} -->
+    </div>
+</div>

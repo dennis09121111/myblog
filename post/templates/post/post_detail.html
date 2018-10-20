@@ -21,5 +21,14 @@
         <a href="{% url 'post_delete' object.id %}" class="btn btn-danger ml-1">Delete</a>
     </div>
     {% endif %}
+    <div class="comments mt-5">
+        <!-- <ul class="list-group"> -->
+            {% for comment in object.comment_set.all %}
+                <!-- <li class="list-group-item"> -->
+                    {% include 'post/list_item.html' with person=comment.author time=comment.date_commented title="" content=comment.comment_content max_length=256 %}
+                <!-- </li> -->
+            {% endfor %}
+        <!-- </ul> -->
+    </div>
 </div>
 {% endblock content %}

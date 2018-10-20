@@ -1,19 +1,7 @@
 {% extends 'post/base.html' %}
 {% block content %}
 {% for post in posts %}
-<div class="card border-dark my-3 w-80">
-    <div class="card-header">
-        <img src="{{ post.author.profile.image.url }}" alt="" class="rounded float-left profile-image">
-        <a class="mute ml-2" href="#">{{ post.author }}</a>
-        <a class="mute ml-2" href="#"><small class="text-muted">{{ post.date_posted|date:"m/d/Y" }}</small></a>
-    </div>
-    <div class="card-body text-dark">
-        <h5 class="card-title">
-            <a class="mute" href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
-        </h5>
-        <p class="card-text">{{ post.content|truncatechars:220 }}</p>
-    </div>
-</div>
+    {% include 'post/list_item.html' with person=post.author time=post.date_posted title=post.title content=post.content max_length=220 %}
 {% endfor %}
 {% if is_paginated %}
 <nav aria-label="...">

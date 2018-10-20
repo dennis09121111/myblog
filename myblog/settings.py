@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'rest_framework',
     'crispy_forms',
+    'comment',
     'user.apps.UserConfig',
     'post.apps.PostConfig',
     'django.contrib.admin',
