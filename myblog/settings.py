@@ -19,6 +19,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '$)sj#%&kxq+7_5zr^%atzt*obki#(zxpdj*7a+_*0itj)xu2r4'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -30,8 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'rest_framework',
     'crispy_forms',
-    'comment',
     'user.apps.UserConfig',
+    'comment.apps.CommentConfig',
     'post.apps.PostConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -75,23 +78,23 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['RDS_NAME'],
-        'USER': os.environ['RDS_USER'],
-        'PASSWORD': os.environ['RDS_PASSWORD'],
-        'HOST': os.environ['RDS_HOSTNAME'],
-        'PORT': os.environ['RDS_PORT'],
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'myTestDB',
+#         'USER': 'masterusername',
+#         'PASSWORD': 'qiQI10310608',
+#         'HOST': os.environ['RDS_HOSTNAME'],
+#         'PORT': os.environ['RDS_PORT'],
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators

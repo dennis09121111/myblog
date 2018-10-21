@@ -1,13 +1,17 @@
 from django.db import models
 from django.contrib.auth.models import User
-from post.models import Post
-from django.utils import timezone
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
+
 
 class Comment(models.Model):
-    of_post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    content = models.CharField(max_length=255)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    comment_content = models.CharField(max_length=255)
-    date_commented = models.DateTimeField(default=timezone.now)
+    date_posted = models.DateTimeField(auto_now=True)
+
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
 
     def __str__(self):
-        return f"A comment for post \"{self.of_post.title}\", by \"{self.author}\""
+        return self.content

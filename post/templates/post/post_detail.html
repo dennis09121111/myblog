@@ -23,11 +23,12 @@
     {% endif %}
     <div class="comments mt-5">
         <!-- <ul class="list-group"> -->
-            {% for comment in object.comment_set.all %}
+            <!-- {% for comment in object.comments.all %} -->
                 <!-- <li class="list-group-item"> -->
-                    {% include 'post/list_item.html' with person=comment.author time=comment.date_commented title="" content=comment.comment_content max_length=256 %}
+                    <!-- {% include 'post/list_item.html' with person=comment.author time=comment.date_commented title="" content=comment.content max_length=255 %} -->
+                    <!-- comment -->
                 <!-- </li> -->
-            {% endfor %}
+            <!-- {% endfor %} -->
         <!-- </ul> -->
     </div>
 </div>

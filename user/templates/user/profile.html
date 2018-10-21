@@ -13,11 +13,11 @@
             <form class="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
-                    <legend class="border-bottom">Join Today</legend>
+                    <legend class="border-bottom">Update Your Profile</legend>
                     {{ u_form|crispy }}
                     {{ p_form|crispy }}
                 </div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
     </div>
