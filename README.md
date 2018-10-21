@@ -1,3 +1,5 @@
+![sample screenshot](https://i.imgur.com/buaA0sQ.png)
+
 1. Post
 - Users are able to modify their own posts (title, content, ?date_modified)
 - title
