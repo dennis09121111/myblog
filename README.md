@@ -22,7 +22,7 @@
 - bio
 - image
 
-3. Comment
+3. Review
 - post: Post
 - author: User
 - content
@@ -39,5 +39,5 @@
 - Post
 - User
 - Profile
-- Comment
+- Review
 - Like

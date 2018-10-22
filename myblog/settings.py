@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'crispy_forms',
     'user.apps.UserConfig',
-    'comment.apps.CommentConfig',
     'post.apps.PostConfig',
     'django.contrib.admin',
     'django.contrib.auth',

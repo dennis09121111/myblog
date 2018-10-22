@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.urls import reverse
 from django.contrib.contenttypes.fields import GenericRelation
-from comment.models import Comment
+# from comment.models import Comment
 
 
 class Post(models.Model):
@@ -11,7 +11,7 @@ class Post(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    comments = GenericRelation(Comment)
+    # comments = GenericRelation(Comment)
 
     def __str__(self):
         return self.title

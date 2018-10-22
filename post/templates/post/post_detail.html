@@ -2,11 +2,11 @@
 {% block content %}
 <div class="container">
     {% if 'update' not in request.META.HTTP_REFERER and 'create' not in request.META.HTTP_REFERER and 'delete' not in request.META.HTTP_REFERER%}
-        <a href="{{request.META.HTTP_REFERER}}" class="btn btn-secondary btn-secondary">< Back</a>
+        <a href="{{request.META.HTTP_REFERER}}" class="btn btn-secondary btn-secondary my-2">< Back</a>
     {% else %}
-        <a href="{% url 'post_home' %}" class="btn btn-secondary btn-secondary"><<< Home</a>
+        <a href="{% url 'post_home' %}" class="btn btn-secondary btn-secondary my-2"><<< Home</a>
     {% endif %}
-    <div class="row my-5">
+    <div class="row md-5">
         <div class="col-sm">
             <div class="">
                 <h2 class="">{{ object.title }}</h2>
@@ -21,15 +21,13 @@
         <a href="{% url 'post_delete' object.id %}" class="btn btn-danger ml-1">Delete</a>
     </div>
     {% endif %}
+
+    <a href="{% url 'user_login' %}" class="btn btn-sm btn-primary">Leave a comment</a>
+
     <div class="comments mt-5">
-        <!-- <ul class="list-group"> -->
-            <!-- {% for comment in object.comments.all %} -->
-                <!-- <li class="list-group-item"> -->
-                    <!-- {% include 'post/list_item.html' with person=comment.author time=comment.date_commented title="" content=comment.content max_length=255 %} -->
-                    <!-- comment -->
-                <!-- </li> -->
-            <!-- {% endfor %} -->
-        <!-- </ul> -->
+        <!-- {% for comment in object.comments.all %}
+            {% include 'post/list_item.html' with border_color="#535863" person=comment.author time=comment.date_commented title="" content=comment.content max_length=255 %}
+        {% endfor %} -->
     </div>
 </div>
 {% endblock content %}
