@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'user.apps.UserConfig',
     'post.apps.PostConfig',
+    'review.apps.ReviewConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

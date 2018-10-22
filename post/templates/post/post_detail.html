@@ -20,14 +20,14 @@
         <a href="{% url 'post_update' object.id %}" class="btn btn-primary">Edit</a>
         <a href="{% url 'post_delete' object.id %}" class="btn btn-danger ml-1">Delete</a>
     </div>
+    {% else %}
+    <a href="{% url 'review_create' object.id %}" class="btn btn-sm btn-primary my-2">Leave a review</a>
     {% endif %}
 
-    <a href="{% url 'user_login' %}" class="btn btn-sm btn-primary">Leave a comment</a>
-
     <div class="comments mt-5">
-        <!-- {% for comment in object.comments.all %}
-            {% include 'post/list_item.html' with border_color="#535863" person=comment.author time=comment.date_commented title="" content=comment.content max_length=255 %}
-        {% endfor %} -->
+        {% for comment in object.review_set.all %}
+            {% include 'post/list_item.html' with border_color="#535863" person=comment.author time=comment.date_posted title="" content=comment.content max_length=255 %}
+        {% endfor %}
     </div>
 </div>
 {% endblock content %}
