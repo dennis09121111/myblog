@@ -1,4 +1,15 @@
-![sample screenshot](https://i.imgur.com/buaA0sQ.png)
+![sample screenshot](https://i.imgur.com/ar8FWKZ.png)
+
+To run the code use the following comments
+```
+git clone https://github.com/dennis09121111/myblog.git
+OR
+git clone git@github.com:dennis09121111/myblog.git
+
+cd myblog
+python manage.py runserver
+open bowser goto http://localhost:8000/
+```
 
 1. Post
 - Users are able to modify their own posts (title, content, ?date_modified)
