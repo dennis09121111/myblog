@@ -7,3 +7,9 @@ class ReviewCreateForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ('content',)
+
+
+# class ReviewUpdateForm(forms.Form):
+#     class meta:
+#         model = Review
+#         fields = ('content',)

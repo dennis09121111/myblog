@@ -9,7 +9,7 @@
                 {{ form|crispy }}
             </div>
             <button type="submit" class="btn btn-primary">Post</button>
-            <a href="{{request.META.HTTP_REFERER}}" class="btn btn-secondary btn-secondary">Cancel</a>
+            <a href="{{request.META.HTTP_REFERER}}" class="btn btn-outline-success btn-outline-success">Cancel</a>
         </form>
     </div>
 {% endblock content %}

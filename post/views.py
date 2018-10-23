@@ -13,7 +13,7 @@ def home(request):
 
 class PostListView(ListView):
     model = Post
-    paginate_by = 2
+    paginate_by = 6
     template_name = 'post/home.html'
     context_object_name = 'posts'
     ordering = '-date_posted'

@@ -2,9 +2,9 @@
 {% block content %}
 <div class="container">
     {% if 'update' not in request.META.HTTP_REFERER and 'create' not in request.META.HTTP_REFERER and 'delete' not in request.META.HTTP_REFERER%}
-        <a href="{{request.META.HTTP_REFERER}}" class="btn btn-secondary btn-secondary my-2">< Back</a>
+        <a href="{{request.META.HTTP_REFERER}}" class="btn btn-outline-success btn-outline-success my-2">< Back</a>
     {% else %}
-        <a href="{% url 'post_home' %}" class="btn btn-secondary btn-secondary my-2"><<< Home</a>
+        <a href="{% url 'post_home' %}" class="btn btn-outline-success btn-outline-success my-2"><<< Home</a>
     {% endif %}
     <div class="row md-5">
         <div class="col-sm">
@@ -21,12 +21,16 @@
         <a href="{% url 'post_delete' object.id %}" class="btn btn-danger ml-1">Delete</a>
     </div>
     {% else %}
-    <a href="{% url 'review_create' object.id %}" class="btn btn-sm btn-primary my-2">Leave a review</a>
+    <a href="{% url 'review_create' object.id %}" class="btn btn-sm btn-outline-primary my-2">Leave a review</a>
     {% endif %}
 
     <div class="comments mt-5">
         {% for comment in object.review_set.all %}
-            {% include 'post/list_item.html' with border_color="#535863" person=comment.author time=comment.date_posted title="" content=comment.content max_length=255 %}
+            {% if comment.author == user %}
+                {% include 'post/list_item.html' with border_color="#535863" person=comment.author time=comment.date_posted title="" content=comment max_length=255 edit="edit" %}
+            {% else %}
+                {% include 'post/list_item.html' with border_color="#535863" person=comment.author time=comment.date_posted title="" content=comment max_length=255 edit="" %}
+            {% endif %}
         {% endfor %}
     </div>
 </div>

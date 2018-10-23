@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from post.models import Post
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
+from django.urls import reverse
 
 
 class Review(models.Model):
@@ -13,3 +14,6 @@ class Review(models.Model):
 
     def __str__(self):
         return self.content
+
+    def get_absolute_url(self):
+        return reverse('post_detail', args=[str(self.post.id)])

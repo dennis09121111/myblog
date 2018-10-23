@@ -8,7 +8,7 @@
                 <h2>Please confirm to delete post {{ object.title }}</h2>
             </div>
             <button type="submit" class="btn btn-danger">Yes, Delete </button>
-            <a class="btn btn-secondary text-light" href="{% url 'post_detail' object.id %}">Cancel</a>
+            <a class="btn btn-outline-success text-light" href="{% url 'post_detail' object.id %}">Cancel</a>
         </form>
     </div>
 {% endblock content %}

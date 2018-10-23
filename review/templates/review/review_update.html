@@ -5,10 +5,10 @@
         <form class="my-3" method="POST">
             {% csrf_token %}
             <div class="form-group">
-                <legend class="border-bottom mh-4">Review</legend>
+                <legend class="border-bottom mh-4">Review Update</legend>
                 {{ form|crispy }}
             </div>
-            <button type="submit" class="btn btn-primary">publish the review</button>
+            <button type="submit" class="btn btn-primary">Update the review</button>
             <a href="{{request.META.HTTP_REFERER}}" class="btn btn-outline-success btn-outline-success">Cancel</a>
         </form>
     </div>

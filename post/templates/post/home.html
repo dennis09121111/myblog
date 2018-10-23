@@ -1,8 +1,12 @@
 {% extends 'post/base.html' %}
 {% block content %}
-{% for post in posts %}
-    {% include 'post/list_item.html' with person=post.author time=post.date_posted title=post.title content=post.content max_length=220 %}
-{% endfor %}
+
+<div class="card-columns">
+  {% for post in posts %}
+      {% include 'post/list_item.html' with person=post.author time=post.date_posted title=post.title content=post max_length=80 %}
+  {% endfor %}
+</div>
+
 {% if is_paginated %}
 <nav aria-label="...">
     <ul class="pagination">
