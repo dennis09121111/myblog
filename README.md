@@ -1,7 +1,3 @@
-![sample screenshot](https://i.imgur.com/fTIWIWc.png)
-
----
-
 To run the code please use the following commends
 ```
 git clone https://github.com/dennis09121111/myblog.git
@@ -14,6 +10,10 @@ python manage.py runserver
 ```
 Open bowser and go to http://localhost:8000/
 
+
+---
+
+![sample screenshot](https://i.imgur.com/fTIWIWc.png)
 
 ---
 
