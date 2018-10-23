@@ -1,6 +1,8 @@
 ![sample screenshot](https://i.imgur.com/ar8FWKZ.png)
 
-To run the code use the following comments
+---
+
+To run the code please use the following commends
 ```
 git clone https://github.com/dennis09121111/myblog.git
 OR
@@ -10,8 +12,11 @@ cd myblog
 
 python manage.py runserver
 ```
+Open bowser and go to http://localhost:8000/
 
-open bowser goto http://localhost:8000/
+
+---
+
 
 1. Post
 - Users are able to modify their own posts (title, content, ?date_modified)
