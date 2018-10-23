@@ -13,7 +13,7 @@ Open bowser and go to http://localhost:8000/
 
 ---
 
-![sample screenshot](https://i.imgur.com/fTIWIWc.png)
+![sample screenshot](https://i.imgur.com/C7pKdYz.png)
 
 ---
 
